@@ -128,50 +128,6 @@ class Brat:
     <br><br>
     """
 
-
-
-
-#     {
-
-#     // Our text of choice
-#     text     : "It is the text of a speech given by an Arab gentleman before the advisory board of a large multi-nation corporation .",
-#     // The entities entry holds all entity annotations
-#     entities : [
-#         /* Format: [${ID}, ${TYPE}, [[${START}, ${END}]]]
-#             note that range of the offsets are [${START},${END})
-#         ['T1', 'Predicate', [[0, 11]]],
-#         ['T2', 'Predicate', [[20, 23]]],
-#         ['T3', 'Predicate', [[37, 40]]],
-#     ['T4', 'Predicate', [[50, 61]]], */
-#       ['A27_32', '', [[27, 32]]],
-# ['A20_26', '', [[20, 26]]],
-# ['A74_79', '', [[74, 79]]],
-# ['A44_53', '', [[44, 53]]],
-# ['A85_90', '', [[85, 90]]],
-# ['A65_73', '', [[65, 73]]],
-# ['A39_43', '', [[39, 43]]],
-# ['A91_115', '', [[91, 115]]],
-# ['A10_14', '', [[10, 14]]]
-#     ],
-
-#     };
-
-
-
-# docData['relations'] = [
-#     // Format: [${ID}, ${TYPE}, [[${ARGNAME}, ${TARGET}], [${ARGNAME}, ${TARGET}]]]
-# /*    ['R1', 'Who said something?', [['dep', 'T2'], ['head', 'T1']]] */
-#       ['R0', 'Who gave this speech ?', [['head', 'A27_32'], ['dep', 'A44_53']]],
-# ['R1', 'who did he give the speech in front of ?', [['head', 'A27_32'], ['dep', 'A74_79']]],
-# ['R2', 'Who gave this speech ?', [['head', 'A27_32'], ['dep', 'A20_26']]],
-# ['R3', 'Who read out this speech text ?', [['head', 'A20_26'], ['dep', 'A10_14']]],
-# ['R4', 'What kind of board is it ?', [['head', 'A74_79'], ['dep', 'A65_73']]],
-# ['R5', 'What kind of corporation was the board for ?', [['head', 'A74_79'], ['dep', 'A91_115']]],
-# ['R6', 'what nationality is this gentleman ?', [['head', 'A44_53'], ['dep', 'A39_43']]],
-# ['R7', 'What size is the multi-nation corporation ?', [['head', 'A91_115'], ['dep', 'A85_90']]]
-#     ];
-# """
-
     html_template = """
     <html>
  <head>
@@ -245,12 +201,3 @@ head.js(
 </body>
 </html>
 """
-
-if __name__ == "__main__":
-    # Example usage
-    sent = "the brown fox jumped over the lazy dog"
-    g = nx.DiGraph()
-    # edges and labels
-    g.add_edge((3, 4), (2, 3))
-    g[(3, 4)][(2, 3)]['label'] = "Who jumped?".split(" ")
-    Brat.output_brat_html(sent, g, "../visualizations/example.html")
