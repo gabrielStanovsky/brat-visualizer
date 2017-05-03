@@ -31,7 +31,9 @@ class NX_wrapper:
                               fn)
 
 if __name__ == "__main__":
-    # Example usage
+    ## Example usage
+
+    # create instance with the sentence (words separated with space)
     g = NX_wrapper("the brown fox jumped over the lazy dog")
 
     # edges and labels
@@ -40,4 +42,5 @@ if __name__ == "__main__":
     g.add_edge((3, 4), (7, 8), "Who did the fox jump over?")
     g.add_edge((6, 7), (7, 8), "Who was lazy?")
 
+    # write visualizations to file
     g.visualize( "../visualizations/example.html")
