@@ -1,6 +1,7 @@
 import networkx as nx
 from brat_handler import Brat
 
+
 class NX_wrapper:
     """
     Simple wrapper for easier sentence level represenation
