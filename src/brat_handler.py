@@ -11,28 +11,32 @@ class Brat:
     """
 
     @staticmethod
-    def output_brat_html(sent, digraph, filename):
+    def output_brat_html(sent, digraph, filename, word_indexed=True):
         """
         Visualize the give digraph (networkx object) using brat
         output to the given fileaname.
         @param sent:  Space separated string
         @param digraph: Netowrkx object
         @param filename: file name in which to write the html code
+        @param word_indexed: boolean, indicating whether the indices in the digraph  
+        are indices of words (True) or of characters (False)
         """
         split_sent = sent.split(' ')
+        if word_indexed:
+            get_character_span_of_node = lambda node: Brat.word_to_char(split_sent, node)
+        else:   # node is already given in character-span format
+            get_character_span_of_node = lambda node: node
+
         entities = ",\n".join(["['A{0}_{1}', '', [[{0}, {1}]]]".format(char_start, char_end)
-                               for char_start, char_end in map(lambda n: Brat.word_to_char(split_sent,
-                                                                                      n),
+                               for char_start, char_end in map(get_character_span_of_node,
                                                                digraph.nodes())])
         rels = ",\n".join(["['R{}', '{}', [['head', '{}'], ['dep', '{}']]]".format(i,
                                                                                    label,
                                                                                    Brat.get_brat_name(src),
                                                                                    Brat.get_brat_name(dst))
                        for i, ((src, dst), label) in
-                           enumerate(map(lambda (source, dest, label): ((Brat.word_to_char(split_sent,
-                                                                                      source),
-                                                                         Brat.word_to_char(split_sent,
-                                                                                      dest)),
+                           enumerate(map(lambda (source, dest, label): ((get_character_span_of_node(source),
+                                                                         get_character_span_of_node(dest)),
                                                                         escape(" ".join(label).replace("'", r"\'"))),
                                          [(source, dest, digraph[source][dest]["label"])
                                       for (source, dest) in digraph.edges()]
