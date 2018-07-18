@@ -1,5 +1,7 @@
 # Brat Visualizer 
 
+Visualize graphs over sentences using the [brat framework](http://brat.nlplab.org/index.html).
+
 ## Install
 `pip install -r requirements`
 
