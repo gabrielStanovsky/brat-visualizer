@@ -3,7 +3,12 @@
 Visualize graphs over sentences using the [brat framework](http://brat.nlplab.org/index.html).
 
 ## Install
+### Python requirements
 `pip install -r requirements`
+
+### Download brat (optional)
+`./download_brat.sh`
+
 
 ## Visualize SDP
 From the `src` folder, run:
