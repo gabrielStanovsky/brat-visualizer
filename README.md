@@ -5,7 +5,7 @@ Visualize graphs over sentences using the [brat framework](http://brat.nlplab.or
 ## Install
 1. Get python packages:
 ```
-pip install -r requirements
+pip install -r requirements.txt
 ```
 
 2. Download brat (optional):
