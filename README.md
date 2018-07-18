@@ -8,7 +8,7 @@ Visualize graphs over sentences using the [brat framework](http://brat.nlplab.or
 pip install -r requirements.txt
 ```
 
-2. Download brat (optional):
+2. Download brat (optional, if you already have it):
 ```
 ./download_brat.sh
 ```
