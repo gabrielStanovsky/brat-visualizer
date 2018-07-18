@@ -7,14 +7,16 @@ class NX_wrapper:
     Simple wrapper for easier sentence level represenation
     """
 
-    def __init__(self, sentence, word_indexed=True):
+    def __init__(self, sentence, brat_location, word_indexed=True):
         """
         Initialize with a space separated sentence
-        @:param word_indexed: boolean, indicating whether the indices used by add_edge function 
+        @:param word_indexed: boolean, indicating whether the indices used by add_edge function
+        @param brat_location: path to the root of the brat installation to use
         are indices of words (True) or of character (False) 
         """
         self.sent = sentence
         self.graph = nx.DiGraph()
+        self.brat_location = brat_location
         self.word_indexed = word_indexed
 
     def add_edge(self, u, v, label):
@@ -33,6 +35,7 @@ class NX_wrapper:
         Brat.output_brat_html(self.sent,
                               self.graph,
                               fn,
+                              self.brat_location,
                               self.word_indexed)
 
 if __name__ == "__main__":

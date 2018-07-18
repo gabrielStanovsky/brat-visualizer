@@ -2,6 +2,7 @@ import json
 import networkx as nx
 from cgi import escape
 import logging
+import pdb
 logging.basicConfig(level = logging.DEBUG)
 
 
@@ -11,13 +12,14 @@ class Brat:
     """
 
     @staticmethod
-    def output_brat_html(sent, digraph, filename, word_indexed=True):
+    def output_brat_html(sent, digraph, filename, brat_location, word_indexed=True):
         """
         Visualize the give digraph (networkx object) using brat
-        output to the given fileaname.
+        output to the given filename.
         @param sent:  Space separated string
         @param digraph: Netowrkx object
         @param filename: file name in which to write the html code
+        @param brat_location: path to the root of the brat installation to use
         @param word_indexed: boolean, indicating whether the indices in the digraph  
         are indices of words (True) or of characters (False)
         """
@@ -43,7 +45,7 @@ class Brat:
                            ))])
 
         brat_input = [(entities, rels)]
-        html = Brat.get_brat_html(sent, brat_input)
+        html = Brat.get_brat_html(sent, brat_input, brat_location)
 
         with open(filename, 'w') as fout:
             fout.write(html)
@@ -69,7 +71,7 @@ class Brat:
 
 
     @staticmethod
-    def get_brat_html(sent, graphs):
+    def get_brat_html(sent, graphs, brat_location):
         """
         Return a brat html text of graphs (list of entities and relations
         sent is a string representing the sentence
@@ -84,6 +86,7 @@ class Brat:
                                      str(graph_ind))
                              for graph_ind, (entities, rels) in enumerate(graphs)])
 
+
         embedding = "\n".join([Brat.embedding_template.replace("LABEL_NUM_STUB", str(i))
                                for i in range(len(graphs))])
 
@@ -93,7 +96,10 @@ class Brat:
 
         return Brat.html_template.replace("DOCDATA_STUB", docdata).\
             replace("EMBEDDING_STUB", embedding).\
-            replace("DIV_STUB", div)
+            replace("DIV_STUB", div).\
+            replace("BRAT_LOCATION_STUB",
+                    brat_location)
+
 
 
     brat_template = """
@@ -135,15 +141,15 @@ class Brat:
     html_template = """
     <html>
  <head>
-   <link rel="stylesheet" type="text/css" href="../brat/brat-v1.3_Crunchy_Frog/style-vis.css"/>
-   <script type="text/javascript" src="../brat/brat-v1.3_Crunchy_Frog/client/lib/head.load.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="BRAT_LOCATION_STUB/style-vis.css"/>
+   <script type="text/javascript" src="BRAT_LOCATION_STUB/client/lib/head.load.min.js"></script>
 </head>
 <body>
 
 
     <script language="javascript">
 
-    var bratLocation = '../brat/brat-v1.3_Crunchy_Frog/';
+    var bratLocation = 'BRAT_LOCATION_STUB/';
 head.js(
     // External libraries
     bratLocation + '/client/lib/jquery.min.js',

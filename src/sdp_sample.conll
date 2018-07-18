@@ -1,0 +1,51 @@
+#SDP 2015
+#22100001
+1	Consumers	consumer	NNS	-	-	n_of:x-i	_	ARG1	ARG1	_	_	_	_	_	_
+2	may	may	MD	+	+	v_modal:e-h	_	_	_	_	_	_	_	_	_
+3	want	want	VB	-	+	v:e-i-h	ARG1	_	_	_	_	_	_	_	_
+4	to	to	TO	-	-	_	_	_	_	_	_	_	_	_	_
+5	move	move	VB	-	+	v_cause:e-i-p	_	_	_	_	_	subord	_	_	_
+6	their	their	PRP$	-	+	q:i-h-h	_	_	_	_	_	_	_	_	_
+7	telephones	telephone	NNS	-	-	n:x	_	_	ARG2	poss	_	_	_	_	_
+8	a	a+little	DT	-	-	x:e-u	_	_	_	_	mwe	_	_	_	_
+9	little	a+little	RB	-	+	x:e-u	_	_	_	_	_	_	_	_	_
+10	closer	closer	RBR	-	+	a_to:e-i-i	_	ARG2	_	_	ARG1	_	ARG1	_	_
+11	to	to	TO	-	+	p:e-u-i	_	_	_	_	_	_	_	_	_
+12	the	the	DT	-	+	q:i-h-h	_	_	_	_	_	_	_	_	_
+13	TV	tv	NN	-	+	n:x	_	_	_	_	_	_	_	_	_
+14	set	set	NN	-	-	n_of:x	_	_	_	_	_	_	ARG2	BV	compound
+15	.	_	.	-	-	_	_	_	_	_	_	_	_	_	_
+
+#22100002
+1	Couch-potato	potato	NN	-	+	n:x	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+2	jocks	_generic_nns_	NNS	-	-	n:x	compound	ARG1	_	_	_	_	_	ARG1	_	_	_	_	_	_	_	_	_	_
+3	watching	watch	VBG	-	+	v:e-i-p	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+4	ABC	ABC	NNP	-	+	named:x-c	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+5	’s	’s	POS	-	-	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+6	“	_	``	-	-	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+7	Monday	Monday	NNP	-	+	dofw:x-c	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+8	Night	night	NNP	-	+	n_of:x	_	_	_	compound	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+9	Football	_generic_proper_ne_	NNP	-	-	named:x-c	_	ARG2	poss	_	compound	_	_	_	_	_	_	_	_	_	_	_	_	_
+10	”	_	''	-	-	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+11	can	can	MD	+	+	v_modal:e-h	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+12	now	now	RB	-	+	a:e-e	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+13	vote	vote	VB	-	+	v_for:e-i-i	_	_	_	_	_	ARG1	ARG1	_	ARG1	_	_	_	_	ARG1	_	_	_	_
+14	during	during	IN	-	+	p:e-u-i	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+15	halftime	_generic_nn_	NN	-	-	n:x	_	_	_	_	_	_	_	_	ARG2	_	_	_	_	_	_	_	_	_
+16	for	for	IN	-	-	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+17	the	the	DT	-	+	q:i-h-h	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+18	greatest	greatest	JJS	-	+	a_for:e-i	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+19	play	play	NN	-	-	n:x	_	_	_	_	_	_	_	ARG2	_	BV	ARG1	ARG1	_	_	_	_	_	_
+20	in	in	IN	-	+	p:e-u-i	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+21	20	_generic_card_ne_	CD	-	+	card:i-i-c	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+22	years	year	NNS	-	-	n:x	_	_	_	_	_	_	_	_	_	_	_	ARG2	ARG1	_	_	_	_	_
+23	from	from	IN	-	+	p:e-i-u	_	_	_	_	_	_	_	_	_	_	_	_	_	_	ARG1	_	_	_
+24	among	among	IN	-	+	p:e-u-i	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+25	four	four	CD	-	+	card:i-i-c	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+26	or	or	CC	-	-	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+27	five	five	CD	-	+	card:i-i-c	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_or_c	_	_
+28	filmed	film	VBN	-	+	v:e-i-p	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+29	replays	replay	NNS	-	-	n_of:x-i	_	_	_	_	_	_	_	_	_	_	_	_	_	_	ARG2	ARG1	ARG1	ARG2
+30	.	_	.	-	-	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+
+
