@@ -1,0 +1,12 @@
+ROOT    ROOT    ROOT    ROOT    -1      ROOT    ROOT    increase        increase        NN      NN      0
+the     the     DT      DT      2       det_arg1        ARG1    lead    lead    NN      NN      3
+in      in      IN      IN      1       prep_arg12      ARG1    increase        increase        NN      NN      0
+in      in      IN      IN      1       prep_arg12      ARG2    lead    lead    NN      NN      3
+to      to      TO      TO      9       prep_arg12      ARG1    increase        increase        NN      NN      0
+to      to      TO      TO      9       prep_arg12      ARG2    35-17   -NUMBER---NUMBER-       CD      CD      10
+then    then    RB      RB      8       adj_arg1        ARG1    to      to      TO      TO      9
+to      to      TO      TO      5       prep_arg12      ARG1    lead    lead    NN      NN      3
+to      to      TO      TO      5       prep_arg12      ARG2    28-17   -NUMBER---NUMBER-       CD      CD      6
+first   first   RB      RB      4       adj_arg1        ARG1    to      to      TO      TO      5
+and     and     CC      CC      7       coord_arg12     ARG1    in      in      IN      IN      1
+and     and     CC      CC      7       coord_arg12     ARG2    to      to      TO      TO      9
