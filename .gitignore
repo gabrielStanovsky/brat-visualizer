@@ -92,3 +92,4 @@ ENV/
 *\#*
 visualizations/*.html
 .venv/
+brat/
