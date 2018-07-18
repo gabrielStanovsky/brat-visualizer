@@ -3,11 +3,15 @@
 Visualize graphs over sentences using the [brat framework](http://brat.nlplab.org/index.html).
 
 ## Install
-1.Python requirements
-`pip install -r requirements`
+1. Get python packages:
+```
+pip install -r requirements
+```
 
-2. Download brat (optional)
-`./download_brat.sh`
+2. Download brat (optional):
+```
+./download_brat.sh
+```
 
 
 ## Visualize SDP
