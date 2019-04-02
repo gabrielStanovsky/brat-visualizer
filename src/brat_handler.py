@@ -29,6 +29,14 @@ class Brat:
         else:   # node is already given in character-span format
             get_character_span_of_node = lambda node: node
 
+        def toSentString(sentStr_or_lstOfWords):
+            # handle both string labels and list-of-words labels
+            if '__iter__' in dir(sentStr_or_lstOfWords):
+                return " ".join(sentStr_or_lstOfWords)
+            elif type(sentStr_or_lstOfWords) in (str, unicode):
+                return sentStr_or_lstOfWords
+            raise Exception("Parameter must be a string of an iterable of strings")
+
         entities = ",\n".join(["['A{0}_{1}', '', [[{0}, {1}]]]".format(char_start, char_end)
                                for char_start, char_end in map(get_character_span_of_node,
                                                                digraph.nodes())])
@@ -39,7 +47,7 @@ class Brat:
                        for i, ((src, dst), label) in
                            enumerate(map(lambda (source, dest, label): ((get_character_span_of_node(source),
                                                                          get_character_span_of_node(dest)),
-                                                                        escape(" ".join(label).replace("'", r"\'"))),
+                                                                        escape(toSentString(label).replace("'", r"\'"))),
                                          [(source, dest, digraph[source][dest]["label"])
                                       for (source, dest) in digraph.edges()]
                            ))])
