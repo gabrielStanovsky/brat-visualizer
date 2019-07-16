@@ -33,7 +33,7 @@ class Brat:
             # handle both string labels and list-of-words labels
             if '__iter__' in dir(sentStr_or_lstOfWords):
                 return " ".join(sentStr_or_lstOfWords)
-            elif type(sentStr_or_lstOfWords) in (str, unicode):
+            elif type(sentStr_or_lstOfWords) in (str, str):
                 return sentStr_or_lstOfWords
             raise Exception("Parameter must be a string of an iterable of strings")
 
@@ -45,12 +45,10 @@ class Brat:
                                                                                    Brat.get_brat_name(src),
                                                                                    Brat.get_brat_name(dst))
                        for i, ((src, dst), label) in
-                           enumerate(map(lambda (source, dest, label): ((get_character_span_of_node(source),
-                                                                         get_character_span_of_node(dest)),
-                                                                        escape(toSentString(label).replace("'", r"\'"))),
-                                         [(source, dest, digraph[source][dest]["label"])
-                                      for (source, dest) in digraph.edges()]
-                           ))])
+                           enumerate([((get_character_span_of_node(source_dest_label[0]),
+                                                                         get_character_span_of_node(source_dest_label[1])),
+                                                                        escape(toSentString(source_dest_label[2]).replace("'", r"\'"))) for source_dest_label in [(source, dest, digraph[source][dest]["label"])
+                                      for (source, dest) in digraph.edges()]])])
 
         brat_input = [(entities, rels)]
         html = Brat.get_brat_html(sent, brat_input, brat_location)
@@ -61,11 +59,12 @@ class Brat:
         logging.debug("output written to: {}".format(filename))
 
     @staticmethod
-    def word_to_char(sent, (word_start, word_end)):
+    def word_to_char(sent, xxx_todo_changeme):
         """
         Given a tuple node indicating word start and end indices,
         return its corresponding char indices
         """
+        (word_start, word_end) = xxx_todo_changeme
         word_end = word_end -1
         return (word_start + sum(map(len, sent[: word_start])),
                 word_end + sum(map(len, sent[: word_end])) + len(sent[word_end]))

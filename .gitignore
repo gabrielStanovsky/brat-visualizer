@@ -93,3 +93,6 @@ ENV/
 visualizations/*.html
 .venv/
 brat/
+*.html
+.*
+*.bak

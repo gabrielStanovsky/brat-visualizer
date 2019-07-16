@@ -15,7 +15,6 @@ from networkx.drawing.nx_agraph import write_dot
 from operator import itemgetter
 import networkx as nx
 
-
 # Local imports
 from sdp_readers import get_nx_graph
 from nx_wrapper import NX_wrapper
@@ -23,8 +22,6 @@ from nx_wrapper import NX_wrapper
 
 # Change default encoding to UTF8 to avoid handling.
 import sys
-reload(sys)  # Reload does the trick!
-sys.setdefaultencoding('UTF8')
 
 
 if __name__ == "__main__":
@@ -44,8 +41,7 @@ if __name__ == "__main__":
 
     # Start computation
     graphs = [get_nx_graph(lines.split("\n"), remove_singletons = False)
-              for lines in
-              open(inp_fn).read().decode("utf8").split("\n\n")
+              for lines in open(inp_fn, encoding = "utf8").read().split("\n\n")
               if lines.strip()]
 
     index = []
